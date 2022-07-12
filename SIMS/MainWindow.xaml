@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIMS"
         mc:Ignorable="d"
-        Title="Home" Height="450" Width="800" Topmost="True" Icon="/Logo.png" ResizeMode="NoResize" SizeToContent="WidthAndHeight" FontFamily="Bahnschrift Condensed">
+        Loaded="MainWindow_OnLoaded"
+        Closed="MainWindow_OnClosed"
+        Closing="MainWindow_OnClosing"
+        Title="Home" Height="450" Width="800" Topmost="True" Icon="/Resources/Logo.png" ResizeMode="NoResize" SizeToContent="WidthAndHeight" FontFamily="Bahnschrift Condensed">
     <Window.Effect>
-        <DropShadowEffect/>
+        <DropShadowEffect />
     </Window.Effect>
     <Grid>
         <ScrollViewer HorizontalAlignment="Left" Height="433" Margin="4,0,0,0" VerticalAlignment="Center" Width="795">
-            <StackPanel x:Name="Hamburger_Back" Height="433" Width="126" Background="#FFEAE4E4" Margin="0,0,7,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </ScrollViewer>
+            <StackPanel>
+                <StackPanel x:Name="Hamburger_Back" Height="433" Width="126" Background="#FFEAE4E4" Margin="0,0,7,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
+                <StackPanel>
+                    <Label Name="lblVersion"></Label>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

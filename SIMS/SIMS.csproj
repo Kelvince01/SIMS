@@ -86,8 +86,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -106,6 +110,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\ButtonModel.cs" />
+    <Compile Include="BLL\ChangeLogs.cs" />
+    <Compile Include="BLL\DBChanger.cs" />
+    <Compile Include="BLL\GlobalClass.cs" />
+    <Compile Include="BLL\ObjectCopier.cs" />
+    <Compile Include="BLL\SerialPortWriter.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="LICENSE\LicnenceVerifier.cs" />
+    <Compile Include="LICENSE\winLicenseExpire.xaml.cs">
+      <DependentUpon>winLicenseExpire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindows.xaml.cs">
+      <DependentUpon>LoginWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreenUI.xaml.cs">
+      <DependentUpon>SplashScreenUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StaticData.cs" />
+    <Compile Include="UserControls\Accounts\ucChartOfAccounts.xaml.cs">
+      <DependentUpon>ucChartOfAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnimationContrainterUserControl.xaml.cs">
+      <DependentUpon>AnimationContrainterUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseUserControl.cs" />
+    <Compile Include="UserControls\pnlSlider.xaml.cs">
+      <DependentUpon>pnlSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winAboutBox.xaml.cs">
+      <DependentUpon>winAboutBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LICENSE\winLicenseExpire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +161,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SplashScreenUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Accounts\ucChartOfAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AnimationContrainterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\pnlSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winAboutBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -137,6 +200,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -168,5 +232,58 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CrystalDecisions.CrystalReports.Engine">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="CrystalReports.ReportSource">
+      <Version>13.0.4001</Version>
+    </PackageReference>
+    <PackageReference Include="CrystalReports.Shared">
+      <Version>13.0.4001</Version>
+    </PackageReference>
+    <PackageReference Include="CrystalReports.WPF.Viewer">
+      <Version>13.0.4001</Version>
+    </PackageReference>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>2.17.1</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>2.4.9</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{C8165F8A-0DEB-43B4-A81F-A1B2AC738EB2}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LICENSE\LICENSE.csproj">
+      <Project>{C6F43A3F-1A5E-41A8-98DF-EC6C42B7C84F}</Project>
+      <Name>LICENSE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIMS.Data\SIMS.Data.csproj">
+      <Project>{7306A318-0270-4DA2-B19D-043EB036E15C}</Project>
+      <Name>SIMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIMS.Models\SIMS.Models.csproj">
+      <Project>{2999FF9D-FA47-4802-962C-AC3557FB2773}</Project>
+      <Name>SIMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIMS.Service\SIMS.Service.csproj">
+      <Project>{8A8A5337-B08E-4596-BDE1-8A7B5FF758F8}</Project>
+      <Name>SIMS.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Transitions\Transitions.csproj">
+      <Project>{057E56A3-781C-4588-A68A-C9E9C3F605E0}</Project>
+      <Name>Transitions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="SIMS.LoginWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS"
+        mc:Ignorable="d"
+        Loaded="LoginWindows_OnLoaded"
+        KeyDown="LoginWindows_OnKeyDown"
+        WindowState="Maximized"
+        ShowInTaskbar="False"
+        Background="Firebrick"
+        Title="Login Windows" Height="450" Width="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock FontSize="20" Text="Login" Margin="0,0,10,10" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Username" FontSize="14" />
+                <TextBox Name="txtUserId" Height="30" Width="250" Padding="5" Margin="10,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Password" FontSize="14" />
+                <PasswordBox Name="txtPassowrd" Height="30" Width="250" Padding="5" Margin="10,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0, 10">
+                <Button Content="Login" Name="btnLogin" Click="LoginBtn_OnClick" Height="30" Width="100" FontSize="14" />
+                <Button Content="Cancel" Name="CancelBtn" Click="CancelBtn_OnClick" Height="30" Width="100" Padding="5" Margin="10,0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
