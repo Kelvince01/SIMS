@@ -1,0 +1,68 @@
+﻿<Window x:Class="sdcTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sdcTool"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Closed="MainWindow_OnClosed"
+        FontFamily="Microsoft Sans Serif"
+        Title="SZZT_sdcTool" Height="435" Width="624"
+        MaxWidth="1024" MaxHeight="760">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Name="label3" Content="log:" TabIndex="0"></Label>
+            <TextBox Name="recvTB" IsReadOnly="True" TabIndex="3" IsTabStop="False" Width="421" Height="109" />
+            <ComboBox Name="sdCB" TabIndex="3" Width="282" Height="21"></ComboBox>
+        </StackPanel>
+        <TabControl Name="tabControl1" SelectedIndex="0" Width="421" Height="263" TabIndex="9">
+            <TabItem Name="tabPage1" Header="">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ProgressBar Name="progressBar1" />
+                        <ComboBox Name="devCB" SelectionChanged="DevCB_OnSelectionChanged"></ComboBox>
+                        <Button Name="tcpBtn" Content="getVatTest(tcp)" Width="117" Height="25" TabIndex="17" Click="TcpBtn_OnClick"></Button>
+                        <Button Name="getIPBt" Click="GetIPBt_OnClick"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="snTB"></TextBox>
+                        <TextBox Name="portTCPTB"></TextBox>
+                        <TextBox Name="remotePortTB"></TextBox>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Name="label7"></Label>
+                        <Label Name="label4"></Label>
+                        <Label Name="label1"></Label>
+                        <Label Name="label5"></Label>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Name="tabPage2" Header="">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="clearBt"></Button>
+                        <Button Name="addGoodsBtn" Click="AddGoodsBtn_OnClick"></Button>
+                        <TextBox Name="codeTb"></TextBox>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Name="label9"></Label>
+                        <Label Name="label8"></Label>
+                        <Label Name="label6"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="nameTb" />
+                        <Label Name="label2" />
+                        <ComboBox Name="vatCB" />
+                    </StackPanel>
+                    <GroupBox Name="groupBox1">
+                        <StackPanel>
+                            <Image Name="picUpdatingFormat"></Image>
+                            <Label Name="rateFomatLabel" />
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>

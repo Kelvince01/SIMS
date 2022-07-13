@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transitions", "Transitions\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIK.DAL", "FIK.DAL\FIK.DAL.csproj", "{BD2B0F60-5DD3-4B2C-8409-2EF51BFDD529}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdcTool", "sdcTool\sdcTool.csproj", "{1CCA41D4-BE54-4695-9F1D-9496824AF908}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{BD2B0F60-5DD3-4B2C-8409-2EF51BFDD529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD2B0F60-5DD3-4B2C-8409-2EF51BFDD529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD2B0F60-5DD3-4B2C-8409-2EF51BFDD529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CCA41D4-BE54-4695-9F1D-9496824AF908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCA41D4-BE54-4695-9F1D-9496824AF908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCA41D4-BE54-4695-9F1D-9496824AF908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCA41D4-BE54-4695-9F1D-9496824AF908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
