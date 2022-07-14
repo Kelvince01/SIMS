@@ -14,7 +14,6 @@ namespace SIMS.LICENSE
 
         public LicnenceVerifier()
         {
-            //this.DataPath = Application.StartupPath + "\\SYSTEMSC.INI";
             this.DataPath = AppDomain.CurrentDomain.BaseDirectory + "\\SYSTEMSC.INI";
             if (File.Exists(this.DataPath))
                 return;
@@ -27,9 +26,15 @@ namespace SIMS.LICENSE
             if (pass.Trim() != "" && pass.Trim() != "?")
             {
                 string str1 = this.objDecoder.decryptData(pass);
-                DateTime dateTime1 = Convert.ToDateTime(str1.Substring(2));
+                var curr = str1.Substring(2);
+                //DateTime dateTime1 = Convert.ToDateTime(curr);
+                DateTime curr2 = DateTime.ParseExact(curr, "MM-dd-yyyy",
+                    System.Globalization.CultureInfo.InvariantCulture);
+                //var curr2 = $"{curr} 00:00:00,000";
+                DateTime dateTime1 = curr2;
                 DateTime now = DateTime.Now;
-                DateTime dateTime2 = Convert.ToDateTime(now.ToString("MM-dd-yyyy"));
+                //DateTime dateTime2 = Convert.ToDateTime(now.ToString("MM-dd-yyyy"));
+                DateTime dateTime2 = now;
                 if (dateTime1 > dateTime2)
                 {
                     msg = "You Change System Date Illegally, Invalid Date";
@@ -41,7 +46,7 @@ namespace SIMS.LICENSE
                 this.objINIFile.IniWriteValue("DT", "Date", this.objEncoder.EncryptData(glic + str2, glic), this.DataPath);
                 return true;
             }
-            msg = "License is Required. Please contact Mediasoft.";
+            msg = "License is Required. Please contact Timiza Technologies.";
             return false;
         }
 
@@ -61,7 +66,7 @@ namespace SIMS.LICENSE
             string str3 = this.objINIFile.HddSerial("c:\\");
             if (str2 != str3)
             {
-                msg = "It is your wrong experiment.If You want to install it another computer then need to permission and license number from Mediasoft.Without permission it cannot be work properly.Please call your software company, Mediasoft.Thank you for YOUR Cooperation";
+                msg = "It is your wrong experiment.If You want to install it another computer then need to permission and license number from Timiza Technologies.Without permission it cannot be work properly.Please call your software company, Timiza Technologies.Thank you for YOUR Cooperation";
                 return false;
             }
             if (date.Length > 4)
@@ -76,10 +81,10 @@ namespace SIMS.LICENSE
                 {
                     if (int32 == 0)
                     {
-                        msg = "Your License is over Today.Please Call Mediasoft";
+                        msg = "Your License is over Today.Please Call Timiza Technologies";
                         return false;
                     }
-                    msg = "Your License will be over after  " + (object)int32 + "  days, Mediasoft";
+                    msg = "Your License will be over after  " + (object)int32 + "  days, Timiza Technologies";
                     return true;
                 }
             }

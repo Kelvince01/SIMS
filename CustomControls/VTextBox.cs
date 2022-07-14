@@ -7,6 +7,11 @@ namespace CustomControls
 {
     public class VTextBox : TextBox
     {
+        static VTextBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(VTextBox), new FrameworkPropertyMetadata(typeof(VTextBox)));
+        }
+
         public VTextBox()
         {
             this.FontFamily = new FontFamily("Microsoft Sans Serif");

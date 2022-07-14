@@ -27,9 +27,10 @@ namespace SIMS
         public SplashScreenUI()
         {
             InitializeComponent();
-            this.timer1.Start();
             this.timer1.IsEnabled = true;
             this.timer1.Tick += new EventHandler(this.timer1_Tick);
+            timer1.Interval = new TimeSpan(0, 0, 1);
+            this.timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

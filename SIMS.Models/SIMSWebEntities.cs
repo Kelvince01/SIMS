@@ -20,5 +20,6 @@ namespace SIMS.Models
         public virtual DbSet<StyleSize> StyleSizes { get; set; }
         public virtual DbSet<AttenantLog> AttenantLogs { get; set; }
         public virtual DbSet<SIMS.Models.Act_MasterChartOfAccount> Act_MasterChartOfAccount { get; set; }
+        public virtual DbSet<SIMS.Models.Discriminator> Discriminators { get; set; }
     }
 }

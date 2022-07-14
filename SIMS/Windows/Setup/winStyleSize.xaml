@@ -1,0 +1,17 @@
+﻿<Window x:Class="SIMS.Windows.Setup.winStyleSize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS.Windows.Setup"
+        mc:Ignorable="d"
+        Loaded="WinStyleSize_OnLoaded"
+        Title="winStyleSize" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="btnSave" Click="BtnSave_OnClick" />
+            <Button Name="btnDelete" Click="BtnDelete_OnClick" />
+            <Button Name="btnClose" Click="BtnClose_OnClick" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿<local:BaseUserControl x:Class="SIMS.UserControls.ucUserManagement"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:local="clr-namespace:SIMS.UserControls"
+                 xmlns:customControls="clr-namespace:CustomControls;assembly=CustomControls"
+                 mc:Ignorable="d"
+                 Loaded="ucUserManagement_Load"
+                 d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Label Content="User Management" FontSize="16" FontWeight="Bold" />
+        <GroupBox Header="User Management">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Login Id" />
+                        <customControls:VTextBox Name="txtUserId" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Password" />
+                        <customControls:VTextBox Name="txtPassword" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Full Name" />
+                        <customControls:VTextBox Name="txtFullName" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Address" />
+                        <customControls:VTextBox Name="txtAddress" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Mobile" />
+                        <customControls:VTextBox Name="txtMobile" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Is Active" />
+                        <CheckBox Name="cbActive" Content="Y/N" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Home Button Edit Permission" />
+                        <CheckBox Name="cbHomeButtonEdit" Content="Y/N" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnSave" Content="Save" Click="btnSave_Click" />
+                        <Button Name="btnClose" Content="Back" Click="btnClose_Click" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <customControls:VDataGrid Name="dgvList">
+                        <customControls:VDataGrid.Columns>
+                            <DataGridTextColumn x:Name="cUserId"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="cFullName"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="cAddress"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="cEmail"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="cIsActive"></DataGridTextColumn>
+                            <DataGridTextColumn x:Name="cHasHomeButtonEditPermi"></DataGridTextColumn>
+                        </customControls:VDataGrid.Columns>
+                    </customControls:VDataGrid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</local:BaseUserControl>

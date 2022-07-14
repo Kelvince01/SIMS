@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CrystalDecisions.CrystalReports.Engine;
 using sdcTool.msgItems;
 
 namespace sdcTool
@@ -108,11 +109,12 @@ namespace sdcTool
                             }
                             if (createXres != null)
                             {
-                                /*ReportDocument reportDocument = new ReportDocument();
+                                ReportDocument reportDocument = new ReportDocument();
                                 reportDocument.Load("rptXInquiryPeriodic.rpt");
                                 reportDocument.SetDataSource((IEnumerable)this.xReportsData);
-                                this.crystalReportViewer1.ReportSource = (object)reportDocument;
-                                this.crystalReportViewer1.Show();*/
+                                this.crystalReportViewer1.ViewerCore.ReportSource = (object)reportDocument;
+                                //this.crystalReportViewer1.Show();
+                                this.crystalReportViewer1.ViewerCore.ShowFirstPage();
                                 this.Show();
                             }
                         }
@@ -167,13 +169,13 @@ namespace sdcTool
                         else if (createXres != null)
                         {
                             CreateXRes.dataItems dataItems = JsonHelper.JsonConvertObject<CreateXRes.dataItems>(createXres.data);
-                            /*ReportDocument reportDocument = new ReportDocument();
+                            ReportDocument reportDocument = new ReportDocument();
                             List<CreateXRes.dataItems> dataItemsList = new List<CreateXRes.dataItems>();
                             dataItemsList.Add(dataItems);
                             reportDocument.Load("rptXReportCashier.rpt");
                             reportDocument.SetDataSource((IEnumerable)dataItemsList);
-                            this.crystalReportViewer1.ReportSource = (object)reportDocument;
-                            this.crystalReportViewer1.Show();*/
+                            this.crystalReportViewer1.ViewerCore.ReportSource = (object)reportDocument;
+                            this.crystalReportViewer1.ViewerCore.ShowFirstPage();
                             this.Show();
                         }
                     }

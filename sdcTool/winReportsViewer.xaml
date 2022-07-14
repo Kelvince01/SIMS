@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sdcTool"
+        xmlns:viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
@@ -23,6 +24,7 @@
             <RadioButton Name="rbCashier" Content="X cashier"></RadioButton>
         </StackPanel>
         <StackPanel Name="panel2">
+            <viewer:CrystalReportsViewer Name="crystalReportViewer1" />
         </StackPanel>
     </StackPanel>
 </Window>

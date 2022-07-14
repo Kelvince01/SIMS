@@ -99,9 +99,9 @@ namespace SIMS
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
             this.lblVersion.Content = "Version : SIMS - " + new winAboutBox().AssemblyVersion;
-            LicnenceVerifier licnenceVerifier = new LicnenceVerifier();
+            //LicnenceVerifier licnenceVerifier = new LicnenceVerifier();
             string msg = "";
-            while (true)
+            /*while (true)
             {
                 if (licnenceVerifier.checkNwrightDate(ref msg))
                 {
@@ -116,7 +116,7 @@ namespace SIMS
                 {
                     new winLicenseExpire().ShowDialog();
                 }
-            }
+            }*/
             if (this.demoThread == null)
                 this.demoThread = new Thread(new ThreadStart(this.LoadData));
             if (!this.demoThread.IsAlive)
@@ -124,7 +124,7 @@ namespace SIMS
                 this.demoThread = new Thread(new ThreadStart(this.LoadData));
                 this.demoThread.Start();
             }
-            if (!(e is ThresholdReachedEventArgs))
+            if (!(e is ThresholdReachedRoutedEventArgs))
             {
                 SplashScreenUI splashScreenUi = new SplashScreenUI();
 

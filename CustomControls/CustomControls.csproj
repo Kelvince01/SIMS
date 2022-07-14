@@ -34,6 +34,13 @@
     <LangVersion>9</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\..\..\..\..\..\.nuget\packages\mahapps.metro\2.4.9\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -51,16 +58,32 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrushExtender.cs" />
+    <Compile Include="ColorDialog.xaml.cs">
+      <DependentUpon>ColorDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionHelpers.cs" />
+    <Compile Include="MetroLogOffPanel.cs" />
+    <Compile Include="My_DataTable_Extensions.cs" />
+    <Compile Include="NumericTextBox.cs" />
+    <Compile Include="RibbonStyle\CreateParams.cs" />
+    <Compile Include="RibbonStyle\InfoWindow.cs" />
+    <Compile Include="RibbonStyle\OffInfoShadow.cs" />
+    <Compile Include="RibbonStyle\RibbonButton.cs" />
+    <Compile Include="RibbonStyle\TabPanel.cs" />
     <Compile Include="ThresholdReachedEventArgs.cs" />
+    <Compile Include="ThresholdReachedRoutedEventArgs.cs" />
     <Compile Include="VComboBox.cs" />
+    <Compile Include="VDataGrid.cs" />
     <Compile Include="VTextBox.cs" />
+    <Page Include="ColorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="CustomControl1.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -80,10 +103,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Transitions\Transitions.csproj">
+      <Project>{057E56A3-781C-4588-A68A-C9E9C3F605E0}</Project>
+      <Name>Transitions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

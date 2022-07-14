@@ -1,0 +1,48 @@
+﻿<local:BaseUserControl x:Class="SIMS.UserControls.ucThemeSettings"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:local="clr-namespace:SIMS.UserControls"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 mc:Ignorable="d"
+                 Loaded="UcThemeSettings_OnLoaded"
+                 d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Label Content="Theme Settings" FontSize="16" FontWeight="Bold" />
+        <Border Margin="20" BorderBrush="Black" BorderThickness="1">
+            <StackPanel>
+                <GroupBox Header="Home Button Color">
+                    <WrapPanel>
+                        <Button Name="btnBlue" Content="Blue"></Button>
+                        <Button Name="btnBlack" Content="Black" Click="BtnBlack_OnClick"></Button>
+                        <Button Name="btnBrown" Content="Brown"></Button>
+                        <Button Name="btnLime" Content="Lime"></Button>
+                        <Button Name="btnGreen" Content="Green"></Button>
+                        <Button Name="btnDefault" Content="Default"></Button>
+                        <Button Name="btnMagenta" Content="Magenta"></Button>
+                        <Button Name="btnWhite" Content="White"></Button>
+                        <Button Name="btnTeal" Content="Teal"></Button>
+                        <Button Name="btnSilver" Content="Silver"></Button>
+                        <Button Name="btnRed" Content="Red"></Button>
+                        <Button Name="btnPurple" Content="Purple"></Button>
+                        <Button Name="btnPink" Content="Pink"></Button>
+                        <Button Name="btnOrange" Content="Orange"></Button>
+                        <Button Name="btnYellow" Content="Yellow"></Button>
+                        <Label Name="lblBackColor" Content="Current Color: "></Label>
+                    </WrapPanel>
+                </GroupBox>
+                <GroupBox Header="Home Background Color" HorizontalContentAlignment="Center">
+                    <StackPanel>
+                        <Button Name="btnSelectColor" Content="Select" Click="BtnSelectColor_OnClick"></Button>
+                        <Label Name="lblButtonColor" Content="Current Color: "></Label>
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <mah:Tile Name="btnSave" IsDefault="True" Content="Save" Click="BtnSave_OnClick" />
+                    <mah:Tile Name="btnClose" Content="Back" IsCancel="True" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</local:BaseUserControl>

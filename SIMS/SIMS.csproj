@@ -91,6 +91,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -117,6 +119,55 @@
     <Compile Include="BLL\GlobalClass.cs" />
     <Compile Include="BLL\ObjectCopier.cs" />
     <Compile Include="BLL\SerialPortWriter.cs" />
+    <Compile Include="DS\Course.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\Department.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\GetStudentGrades_Result.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\OfficeAssignment.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\OnlineCourse.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\OnsiteCourse.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\Person.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\SIMSDataModel.cs" />
+    <Compile Include="DS\SIMSDataSet.cs">
+      <DependentUpon>SIMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\SIMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\SIMSModel2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIMSModel2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\SIMSModel2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DS\SIMSModel2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIMSModel2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DS\StudentGrade.cs">
+      <DependentUpon>SIMSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\DataTableExt.cs" />
     <Compile Include="ImageHelper.cs" />
     <Compile Include="LICENSE\LicnenceVerifier.cs" />
     <Compile Include="LICENSE\winLicenseExpire.xaml.cs">
@@ -124,6 +175,12 @@
     </Compile>
     <Compile Include="LoginWindows.xaml.cs">
       <DependentUpon>LoginWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HtmlReportViewer.xaml.cs">
+      <DependentUpon>HtmlReportViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.xaml.cs">
+      <DependentUpon>ReportViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="SplashScreenUI.xaml.cs">
       <DependentUpon>SplashScreenUI.xaml</DependentUpon>
@@ -138,6 +195,39 @@
     <Compile Include="UserControls\BaseUserControl.cs" />
     <Compile Include="UserControls\pnlSlider.xaml.cs">
       <DependentUpon>pnlSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Reports\ucAttendanceReports.xaml.cs">
+      <DependentUpon>ucAttendanceReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Setups\ucGroupSetup.xaml.cs">
+      <DependentUpon>ucGroupSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Setups\ucPersonSetup.xaml.cs">
+      <DependentUpon>ucPersonSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Setups\ucStyleSize.xaml.cs">
+      <DependentUpon>ucStyleSize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucExportData.xaml.cs">
+      <DependentUpon>ucExportData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucProfileUpdate.xaml.cs">
+      <DependentUpon>ucProfileUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSettings.xaml.cs">
+      <DependentUpon>ucSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucThemeSettings.xaml.cs">
+      <DependentUpon>ucThemeSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucUserManagement.xaml.cs">
+      <DependentUpon>ucUserManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucUserPermission.xaml.cs">
+      <DependentUpon>ucUserPermission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Setup\winStyleSize.xaml.cs">
+      <DependentUpon>winStyleSize.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\winAboutBox.xaml.cs">
       <DependentUpon>winAboutBox.xaml</DependentUpon>
@@ -162,7 +252,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Reports\HtmlReportViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports\ReportViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SplashScreenUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +277,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\pnlSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Reports\ucAttendanceReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Setups\ucGroupSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Setups\ucPersonSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Setups\ucStyleSize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucExportData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucProfileUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucThemeSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucUserManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucUserPermission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Setup\winStyleSize.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,6 +347,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DS\SIMSDataSet.xsc">
+      <DependentUpon>SIMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DS\SIMSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIMSDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\SIMSDataSet.xss">
+      <DependentUpon>SIMSDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="DS\SIMSModel2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SIMSModel2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DS\SIMSModel2.edmx.diagram">
+      <DependentUpon>SIMSModel2.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -258,6 +422,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Unofficial.Microsoft.mshtml">
+      <Version>7.0.3300</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
@@ -285,6 +452,23 @@
       <Name>Transitions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DS\SIMSModel2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SIMSModel2.edmx</DependentUpon>
+      <LastGenOutput>SIMSModel2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DS\SIMSModel2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SIMSModel2.edmx</DependentUpon>
+      <LastGenOutput>SIMSModel2.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

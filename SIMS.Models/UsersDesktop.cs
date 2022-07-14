@@ -17,7 +17,5 @@ namespace SIMS.Models
         public string isActive { get; set; }
 
         public string HasHomeButtonEditPermi { get; set; }
-
-        public Decimal? MaxDiscPerc { get; set; }
     }
 }
