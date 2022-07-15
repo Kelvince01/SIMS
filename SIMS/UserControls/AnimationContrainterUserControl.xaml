@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="SIMS.UserControls.AnimationContrainterUserControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:SIMS.UserControls"
-             mc:Ignorable="d"
-             Background="White"
-             d:DesignHeight="193" d:DesignWidth="441">
+﻿<local:pnlSlider x:Class="SIMS.UserControls.AnimationContrainterUserControl"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:local="clr-namespace:SIMS.UserControls"
+           mc:Ignorable="d"
+           Background="White"
+           d:DesignHeight="193" d:DesignWidth="441">
     <StackPanel Width="441" Height="7" Name="panelTop">
     </StackPanel>
-</UserControl>
+</local:pnlSlider>

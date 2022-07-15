@@ -22,7 +22,8 @@ namespace SIMS.UserControls
     /// </summary>
     public partial class pnlSlider : MetroContentControl
     {
-        private MetroContentControl _owner = (MetroContentControl)null;
+        private Window _owner = (Window)null;
+        private bool _loaded = false;
 
         public event EventHandler Closed;
 
@@ -49,19 +50,24 @@ namespace SIMS.UserControls
             InitializeComponent();
         }
 
-        /*public pnlSlider(Window owner)
-            : this()
+        public pnlSlider(Window owner) : this()
         {
-            this.Visible = false;
+            this.Visibility = Visibility.Hidden;
             this._owner = owner;
-            owner.Controls.Add((Control)this);
-            this.BringToFront();
-            owner.Resize += new EventHandler(this.owner_Resize);
-            this.Click += new EventHandler(this.pnlSlider_Click);
+            var grid = owner.Content as Grid;
+            grid.Children.Add((Control)this);
+            this.BringIntoView();
+            owner.SizeChanged += new SizeChangedEventHandler(this.owner_Resize);
+            this.MouseLeftButtonDown += new MouseButtonEventHandler(this.pnlSlider_Click);
             this.ResizeForm();
+            this.UpdateLayout();
         }
 
-        private void pnlSlider_Click(object sender, EventArgs e)
+        private void owner_Resize(object sender, SizeChangedEventArgs e)
+        {
+        }
+
+        private void pnlSlider_Click(object sender, MouseButtonEventArgs e)
         {
         }
 
@@ -69,23 +75,23 @@ namespace SIMS.UserControls
         {
             this.Width = this._owner.Width;
             this.Height = this._owner.Height - 40;
-            this.Location = new Point(this._loaded ? 0 : this._owner.Width, 0);
+            this.PointToScreen(new Point(this._loaded ? 0 : this._owner.Width, 0));
         }
 
         public void swipe(bool show = true)
         {
-            this.Visible = true;
+            this.Visibility = Visibility.Visible;
             Transition transition = new Transition((ITransitionType)new TransitionType_EaseInEaseOut(500));
             transition.add((object)this, "Left", (object)(show ? 0 : this.Width));
             transition.run();
-            while (this.Left != (show ? 0 : this.Width))
-                Application.DoEvents();
+            /*while (this.Left != (show ? 0 : this.Width))
+                App.DoEvents();*/
             if (!show)
             {
                 this.closed(new EventArgs());
-                this._owner.Resize -= new EventHandler(this.owner_Resize);
-                this._owner.Controls.Remove((Control)this);
-                this.Dispose();
+                this._owner.SizeChanged -= new SizeChangedEventHandler(this.owner_Resize);
+                var grid = _owner.Content as Grid;
+                grid.Children.Remove((Control)this);
             }
             else
             {
@@ -93,6 +99,6 @@ namespace SIMS.UserControls
                 this.ResizeForm();
                 this.shown(new EventArgs());
             }
-        }*/
+        }
     }
 }

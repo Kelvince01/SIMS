@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIMS"
+        xmlns:customControls="clr-namespace:CustomControls;assembly=CustomControls"
         mc:Ignorable="d"
         Loaded="MainWindow_OnLoaded"
         Closed="MainWindow_OnClosed"
         Closing="MainWindow_OnClosing"
+        Activated="MainWindow_OnActivated"
+        MouseLeftButtonDown="MainWindow_OnMouseLeftButtonDown"
+        MouseMove="MainWindow_OnMouseMove"
         Title="Home" Height="450" Width="800" Topmost="True" Icon="/Resources/Logo.png" ResizeMode="NoResize" SizeToContent="WidthAndHeight" FontFamily="Bahnschrift Condensed">
     <Window.Effect>
         <DropShadowEffect />
@@ -19,6 +23,7 @@
 
                 <StackPanel>
                     <Label Name="lblVersion"></Label>
+                    <customControls:MetroLogOffPanel Name="metroLogOffPanel1"></customControls:MetroLogOffPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

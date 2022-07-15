@@ -21,5 +21,8 @@ namespace SIMS.Models
         public virtual DbSet<AttenantLog> AttenantLogs { get; set; }
         public virtual DbSet<SIMS.Models.Act_MasterChartOfAccount> Act_MasterChartOfAccount { get; set; }
         public virtual DbSet<SIMS.Models.Discriminator> Discriminators { get; set; }
+        public virtual DbSet<SIMS.Models.Staff> Staffs { get; set; }
+        public virtual DbSet<Designation> Designations { get; set; }
+        public virtual DbSet<Campus> Campuses { get; set; }
     }
 }

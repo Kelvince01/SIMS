@@ -176,6 +176,8 @@
     <Compile Include="LoginWindows.xaml.cs">
       <DependentUpon>LoginWindows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Class\SP_ReportCampusAttendance.cs" />
+    <Compile Include="Reports\Class\SP_ReportStaffAttendance.cs" />
     <Compile Include="Reports\HtmlReportViewer.xaml.cs">
       <DependentUpon>HtmlReportViewer.xaml</DependentUpon>
     </Compile>
@@ -196,6 +198,9 @@
     <Compile Include="UserControls\pnlSlider.xaml.cs">
       <DependentUpon>pnlSlider.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Reports\ucAccountsReport.xaml.cs">
+      <DependentUpon>ucAccountsReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Reports\ucAttendanceReports.xaml.cs">
       <DependentUpon>ucAttendanceReports.xaml</DependentUpon>
     </Compile>
@@ -205,8 +210,17 @@
     <Compile Include="UserControls\Setups\ucPersonSetup.xaml.cs">
       <DependentUpon>ucPersonSetup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Setups\ucStaffSetup.xaml.cs">
+      <DependentUpon>ucStaffSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Setups\ucStyleSize.xaml.cs">
       <DependentUpon>ucStyleSize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBusyScreen.xaml.cs">
+      <DependentUpon>ucBusyScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCampusOnOff.xaml.cs">
+      <DependentUpon>ucCampusOnOff.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucExportData.xaml.cs">
       <DependentUpon>ucExportData.xaml</DependentUpon>
@@ -231,6 +245,9 @@
     </Compile>
     <Compile Include="Windows\winAboutBox.xaml.cs">
       <DependentUpon>winAboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="LICENSE\winLicenseExpire.xaml">
       <SubType>Designer</SubType>
@@ -280,6 +297,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Reports\ucAccountsReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Reports\ucAttendanceReports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -292,7 +313,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Setups\ucStaffSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Setups\ucStyleSize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucBusyScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucCampusOnOff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -325,6 +358,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\winAboutBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

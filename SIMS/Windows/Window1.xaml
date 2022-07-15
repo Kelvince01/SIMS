@@ -1,0 +1,139 @@
+﻿<Window x:Class="SIMS.Windows.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS.Windows"
+        mc:Ignorable="d"
+        SizeChanged="Window1_OnSizeChanged"
+        Title="Contacts" Height="600" Width="1200">
+    <StackPanel Orientation="Vertical">
+        <Menu HorizontalAlignment="Left">
+            <MenuItem Header="File">
+                <MenuItem x:Name="mNewRecord"
+                          Header="New Record"
+                          Click="mNewRecord_Click" />
+                <MenuItem Header="Export Data"
+                          Click="myReport_Click" />
+                <MenuItem Header="Find Opportunity Number"
+                          Click="mOpportunity_Click" />
+            </MenuItem>
+            <MenuItem Header="Maintenance">
+                <MenuItem Header="Bdev/Sales Lead"
+                          Click="SalesMaint_Click" />
+                <MenuItem Header="Contracts Lead"
+                          Click="Contracts_Click" />
+                <MenuItem Header="Finance Lead"
+                          Click="Finance_Click" />
+                <MenuItem Header="Technical Lead"
+                          Click="TechLead_Click" />
+                <MenuItem Header="Program Manager"
+                          Click="PmgrMaint_Click" />
+                <MenuItem Header="Proposal Manager"
+                          Click="ProposalMgr_Click" />
+                <MenuItem Header="Capture Manager"
+                          Click="CaptureMgr_Click" />
+                <MenuItem Header="Customer"
+                          Click="mCustomer_Click" />
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Vertical"
+                    Margin="1,1,1,2">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Width="500">
+                <Label Content="Folders:" />
+                <ComboBox x:Name="cbFolders"
+                          Margin="4"
+                          Width="160"
+                          ItemsSource="{Binding Path=myFolders}"
+                          DisplayMemberPath="FolderName"
+                          SelectionChanged="cbFolders_SelectionChanged">
+                </ComboBox>
+                <Button Content="Test" x:Name="btnTest" Click="btnTest_Click" />
+            </StackPanel>
+            <Expander Header="Filter"
+                      Margin="0,0,0,3"
+                      x:Name="ExpFilters">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Division:"
+                           x:Name="lbSSGLane" />
+                    <ComboBox x:Name="cbDivision"
+                              Width="130"
+                              ItemsSource="{Binding Path=myDivisions}"
+                              SelectionChanged="Filter_SelectionChanged" />
+                    <Label Content="Ext Lane:"
+                           x:Name="lbExtLane" />
+                    <ComboBox x:Name="cbExtLane"
+                              Width="130"
+                              SelectionChanged="Filter_SelectionChanged"
+                              ItemsSource="{Binding Path=myProducts}" />
+                    <Label Content="Site:"
+                           x:Name="lbSite" />
+                    <ComboBox x:Name="cbSite"
+                              SelectionChanged="Filter_SelectionChanged"
+                              ItemsSource="{Binding Path=mySites}"
+                              Width="130" />
+                    <Label Content="Internal Lane:"
+                           x:Name="lbIntLane" />
+                    <ComboBox x:Name="cbIntLane"
+                              Width="130"
+                              ItemsSource="{Binding Path=myDescriptions}" />
+                    <Label Content="BDev/Sales Lead:"
+                           x:Name="lbBDevLead" />
+                    <ComboBox x:Name="cbBDevLead"
+                              SelectionChanged="Filter_SelectionChanged"
+                              Width="130"
+                              ItemsSource="{Binding Path=myBusinessLeads}" />
+                </StackPanel>
+            </Expander>
+            <DataGrid x:Name="ContactsGrid"
+                      Height="400"
+                      ItemsSource="{Binding Path=myData}"
+                      CanUserSortColumns="True"
+                      CanUserReorderColumns="True"
+                      CanUserResizeColumns="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                      Grid.Row="1"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridHyperlinkColumn Header="OpportunityNumber">
+                        <DataGridHyperlinkColumn.ElementStyle>
+                            <Style>
+                                <EventSetter Event="Hyperlink.Click"
+                                             Handler="Button_Click" />
+                            </Style>
+                        </DataGridHyperlinkColumn.ElementStyle>
+                    </DataGridHyperlinkColumn>
+                    <DataGridTextColumn Header="Opportunity Name"
+                                        Binding="{Binding Path='OpportunityName'}"
+                                        Width="100" />
+                    <DataGridTextColumn Header="Division/SSG Lane"
+                                        Binding="{Binding Path='DivisionSSGLane'}" />
+                    <DataGridTextColumn Header="External Lane/BST"
+                                        Binding="{Binding Path='ExternalLaneBST'}" />
+                    <DataGridTextColumn Header="Site"
+                                        Binding="{Binding Path=Site}" />
+                    <DataGridTextColumn Header="Internal Lane"
+                                        Binding="{Binding Path='InternalLane'}" />
+                    <DataGridTextColumn Header="BDev/Sales Lead"
+                                        Binding="{Binding Path='BDevSalesLead'}" />
+                    <DataGridTextColumn Header="Customer"
+                                        Binding="{Binding Path=Customer}" />
+                    <DataGridTextColumn Header="Current Status"
+                                        Binding="{Binding Path='CurrentStatus'}" />
+                    <DataGridTextColumn Header="Anticipated Award"
+                                        Binding="{Binding Path='AnticipatedAward'}" />
+                    <DataGridTextColumn Header="Created Date"
+                                        Binding="{Binding Path='CreatedDate'}" />
+                    <DataGridTextColumn Header="Modified Date"
+                                        Binding="{Binding Path='ModifiedDate'}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Label x:Name="lbStatus"
+               Foreground="Red" />
+    </StackPanel>
+</Window>

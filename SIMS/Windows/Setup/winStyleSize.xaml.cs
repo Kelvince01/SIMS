@@ -59,7 +59,7 @@ namespace SIMS.Windows.Setup
         private void WinStyleSize_OnLoaded(object sender, RoutedEventArgs e)
         {
             this.BindComboBox();
-            /*this.btnDelete.Enabled = false;
+            /*this.btnDelete.IsEnabled = false;
             this.txtSDCSDCode.Text = StaticData.globalSetup.SDC_Default_SD_CODE;
             this.txtSDCVatCode.Text = StaticData.globalSetup.SDC_Default_VAT_CODE;
             if (this.sbarocde != "")

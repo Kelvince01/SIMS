@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 using SIMS.BLL;
 using SIMS.Data.Infrastructure;
@@ -48,6 +49,13 @@ namespace SIMS.UserControls.Setups
             this.GenerateMax();
             //this.LoadGridData();
             //this.txtGroupName.Focus();
+        }
+
+        public void ucGroupSetup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Return)
+                return;
+            //this.ProcessTabKey(true);
         }
 
         public delegate void afterCloseClick(object sender);

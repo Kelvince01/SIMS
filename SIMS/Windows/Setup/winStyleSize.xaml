@@ -9,9 +9,9 @@
         Title="winStyleSize" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <Button Name="btnSave" Click="BtnSave_OnClick" />
-            <Button Name="btnDelete" Click="BtnDelete_OnClick" />
-            <Button Name="btnClose" Click="BtnClose_OnClick" />
+            <Button Name="btnSave" Click="BtnSave_OnClick" Content="Save" />
+            <Button Name="btnDelete" Click="BtnDelete_OnClick" Content="Delete" />
+            <Button Name="btnClose" Click="BtnClose_OnClick" Content="Back" />
         </StackPanel>
     </Grid>
 </Window>

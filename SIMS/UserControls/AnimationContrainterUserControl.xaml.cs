@@ -18,11 +18,12 @@ namespace SIMS.UserControls
     /// <summary>
     /// Interaction logic for AnimationContrainterUserControl.xaml
     /// </summary>
-    public partial class AnimationContrainterUserControl : UserControl
+    public partial class AnimationContrainterUserControl : pnlSlider
     {
-        public AnimationContrainterUserControl()
+        public AnimationContrainterUserControl(Window owner) : base(owner)
         {
             InitializeComponent();
+            //this.StyleManager.Update();
         }
     }
 }

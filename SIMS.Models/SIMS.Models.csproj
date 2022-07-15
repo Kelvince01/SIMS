@@ -55,9 +55,11 @@
     <Compile Include="Act_MasterChartOfAccount.cs" />
     <Compile Include="AttenantLog.cs" />
     <Compile Include="AttenantLogStaff.cs" />
+    <Compile Include="Campus.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="CourseInstructor.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="Designation.cs" />
     <Compile Include="DesktopMenu.cs" />
     <Compile Include="Discriminator.cs" />
     <Compile Include="GlobalSetup.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="PGroup.cs" />
     <Compile Include="SIMSWebEntities.cs" />
+    <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentGrade.cs" />
